@@ -42,3 +42,21 @@ body {
   background-color: #ddd;
   color: #000;
 }
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .navbar ul li {
+    /* display: block; */
+    margin: 5px 0;
+  }
+  .navbar button {
+    padding: 6px 12px;
+    margin-left: 5px;
+  }
+}

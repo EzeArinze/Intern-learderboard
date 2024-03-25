@@ -89,3 +89,27 @@ img {
   border-radius: 20%;
   margin-right: 12px;
 }
+
+@media only screen and (max-width: 600px) {
+  .top-class,
+  .top-class-e {
+    width: 90%; /* Adjust width for smaller screens */
+    font-size: 16px;
+    font-weight: 500;
+  }
+  th,
+  td {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  table {
+    width: 100%; /* Make table full width on smaller screens */
+  }
+
+  th,
+  td {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+}
