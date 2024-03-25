@@ -1,6 +1,7 @@
 //Frontend Interns
 import React, { useState, useEffect } from "react";
 import "./FrontendInterns.css"; // Import shared CSS for table styling
+import "./MediaQuery.css";
 
 const FrontendInterns = () => {
   const [interns, setInterns] = useState([
