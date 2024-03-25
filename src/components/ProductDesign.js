@@ -55,6 +55,26 @@ const ProductDesignInterns = () => {
     // Add more interns
   ]);
 
+  function isEqual(arr1, arr2) {
+    // If lengths are different, arrays are not equal
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+
+    // Iterate through each item in the arrays
+    for (let i = 0; i < arr1.length; i++) {
+      // Check if each property of the objects is equal
+      for (let key in arr1[i]) {
+        if (arr1[i][key] !== arr2[i][key]) {
+          return false;
+        }
+      }
+    }
+
+    // If no differences found, arrays are equal
+    return true;
+  }
+
   useEffect(() => {
     // Calculate overall grade for each intern
     const updatedInterns = interns.map((intern) => ({
@@ -67,7 +87,10 @@ const ProductDesignInterns = () => {
       (a, b) => b.overallGrade - a.overallGrade
     );
 
-    setInterns(sortedInterns);
+    // Check if the sorted interns are different from the current state before updating
+    if (!isEqual(sortedInterns, interns)) {
+      setInterns(sortedInterns);
+    }
   }, [interns]);
 
   // Extract top 3 interns

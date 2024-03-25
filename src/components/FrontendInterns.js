@@ -55,6 +55,42 @@ const FrontendInterns = () => {
     // Add more interns
   ]);
 
+  // useEffect(() => {
+  //   // Calculate overall grade for each intern
+  //   const updatedInterns = interns.map((intern) => ({
+  //     ...intern,
+  //     overallGrade: (intern.Task1 + intern.Task2) / 2, // Calculate average
+  //   }));
+
+  //   // Sort interns based on their overall grades in descending order
+  //   const sortedInterns = [...updatedInterns].sort(
+  //     (a, b) => b.overallGrade - a.overallGrade
+  //   );
+
+  //   setInterns(sortedInterns);
+  // }, [interns]);
+
+  // Deep comparison function to check if two arrays of objects are equal
+  function isEqual(arr1, arr2) {
+    // If lengths are different, arrays are not equal
+    if (arr1.length !== arr2.length) {
+      return false;
+    }
+
+    // Iterate through each item in the arrays
+    for (let i = 0; i < arr1.length; i++) {
+      // Check if each property of the objects is equal
+      for (let key in arr1[i]) {
+        if (arr1[i][key] !== arr2[i][key]) {
+          return false;
+        }
+      }
+    }
+
+    // If no differences found, arrays are equal
+    return true;
+  }
+
   useEffect(() => {
     // Calculate overall grade for each intern
     const updatedInterns = interns.map((intern) => ({
@@ -67,7 +103,10 @@ const FrontendInterns = () => {
       (a, b) => b.overallGrade - a.overallGrade
     );
 
-    setInterns(sortedInterns);
+    // Check if the sorted interns are different from the current state before updating
+    if (!isEqual(sortedInterns, interns)) {
+      setInterns(sortedInterns);
+    }
   }, [interns]);
 
   // Extract top 3 interns

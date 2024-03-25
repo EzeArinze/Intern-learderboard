@@ -60,3 +60,25 @@ body {
     margin-left: 5px;
   }
 }
+
+@media only screen and (max-width: 412px) {
+  .navbar button {
+    padding: 4px 8px;
+    margin-left: 5px;
+  }
+  .top-class,
+  .top-class-e {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  table {
+    width: 100%; /* Make table full width on smaller screens */
+  }
+
+  th,
+  td {
+    padding: 8px; /* Reduce padding for smaller screens */
+  }
+}

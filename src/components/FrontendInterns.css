@@ -96,6 +96,9 @@ img {
     width: 90%; /* Adjust width for smaller screens */
     font-size: 16px;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   th,
   td {
@@ -111,5 +114,21 @@ img {
   th,
   td {
     padding: 8px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media only screen and (max-width: 444px) {
+  .top-class,
+  .top-class-e {
+    width: 60%; /* Adjust width for smaller screens */
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 20%;
+    margin-right: 12px;
   }
 }
